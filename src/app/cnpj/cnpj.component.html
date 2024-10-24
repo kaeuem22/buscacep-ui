@@ -1,0 +1,26 @@
+<div class="flex flex-wrap">
+  <!-- Botão de Voltar -->
+  <div class="col-12">
+    <p-button icon="pi pi-arrow-left" styleClass="p-button-rounded p-button-text p-button-raised" routerLink="/"></p-button>
+  </div>
+
+  <!-- Formulário -->
+  <div class="col-12 md:col-6 lg:col-3">
+    <span class="p-float-label">
+      <p-inputMask mask="99.999.999/9999-999" styleClass="w-full" id="cnpj"></p-inputMask>
+      <label htmlFor="cnpj">CNPJ</label>
+    </span>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3">
+    <span class="p-float-label">
+      <input class="w-full" pInputText id="razaoSocial">
+      <label htmlFor="logradouro">Razão social</label>
+    </span>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3">
+    <span class="p-float-label">
+      <input class="w-full" pInputText id="nomeFantasia">
+      <label htmlFor="bairro">Nome fantasia</label>
+    </span>
+  </div>
+</div>
