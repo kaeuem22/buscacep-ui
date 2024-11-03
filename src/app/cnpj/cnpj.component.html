@@ -1,26 +1,42 @@
-<div class="flex flex-wrap">
-  <!-- Botão de Voltar -->
+<form #form="ngForm">
   <div class="col-12">
     <p-button icon="pi pi-arrow-left" styleClass="p-button-rounded p-button-text p-button-raised" routerLink="/"></p-button>
   </div>
+  <div class="col-8 md:col-6 lg:col-3">
+    <p-inputMask type="tel" mask="99.999.999/9999-99" [(ngModel)]="buscacnpj" minlength="8"  (onBlur)="buscarCNPJ(buscacnpj, form)"  name="cnpj" placeholder="99.999.999/9999-99" [unmask]="true" [required]="true"></p-inputMask>
+  </div>
 
-  <!-- Formulário -->
-  <div class="col-12 md:col-6 lg:col-3">
-    <span class="p-float-label">
-      <p-inputMask mask="99.999.999/9999-999" styleClass="w-full" id="cnpj"></p-inputMask>
-      <label htmlFor="cnpj">CNPJ</label>
-    </span>
+  <div class="col-4 md:col-6 lg:col-3">
+    <button pButton type="button" label="Pesquisar" class="p-button-raised"
+    (click)="buscarCNPJ(buscacnpj, form)" [disabled]="form.invalid"></button>
   </div>
-  <div class="col-12 md:col-6 lg:col-3">
-    <span class="p-float-label">
-      <input class="w-full" pInputText id="razaoSocial">
-      <label htmlFor="logradouro">Razão social</label>
-    </span>
+
+  <div class="flex flex-wrap mt-5" *ngIf="buscar">
+   
+   
+    <div class="col-12 md:col-6 lg:col-3">
+      <span class="p-float-label">
+        <input class="w-full" pInputText ngModel id="nomeFantasia" name="nomeFantasia" disabled="true">
+        <label htmlFor="nomeFantasia">Nome Fantasia</label>
+      </span>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3 mt-2">
+      <span class="p-float-label">
+        <input class="w-full" pInputText id="razaoSocial" name="razaoSocial" ngModel disabled="true">
+        <label htmlFor="razaoSocial">Razao Social</label>
+      </span>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3 mt-2">
+      <span class="p-float-label">
+        <input class="w-full" pInputText id="situacao" name="situacao" ngModel disabled="true">
+        <label htmlFor="situacao">Situação</label>
+      </span>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3 mt-2">
+      <span class="p-float-label">
+        <input class="w-full" pInputText id="inicioAtividade" name="inicioAtividade" ngModel disabled="true">
+        <label htmlFor="inicioAtividade">Inicio Atividade</label>
+      </span>
+    </div>
   </div>
-  <div class="col-12 md:col-6 lg:col-3">
-    <span class="p-float-label">
-      <input class="w-full" pInputText id="nomeFantasia">
-      <label htmlFor="bairro">Nome fantasia</label>
-    </span>
-  </div>
-</div>
+</form>
